@@ -1,5 +1,6 @@
 import React from 'react'
 import logi from '../images/lol.png'
+import map from '../images/maps.JPG'
 import './footer.css'
 
 export const Footer = () => {
@@ -10,7 +11,7 @@ export const Footer = () => {
             
         </div>
         <div>
-        
+          <img src={map} className='mapp'/>
         </div>
     </div>
   )
