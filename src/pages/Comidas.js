@@ -1,114 +1,134 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './comidas.css'
-import { NavLink } from "react-router-dom"
-import hs from '../images/burguer/sencilla.jpg'
+import { NavLink , useParams } from "react-router-dom"
 import { Constructor } from '../components/Constructor'
 import { useState } from 'react'
 
+
 export const Comidas = () => {
+
+    const {category} = useParams()
 
     const products = [
         {
             id: 1,
             name: "Sencilla",
             price: 8000,
-            category: "burguer",
+            category: "hamburguesas",
+            img:require("../images/burguer/sencilla.jpg"),
             
         },
         {
             id: 2,
             name: "Especial",
             price: 12000,
-            category: "burguer"
+            category: "hamburguesas",
+            img:"../images/burguer/especial.PNG"
         },
         {
             id: 3,
             name: "Doble",
             price: 16000,
-            category: "burguer"
+            category: "hamburguesas",
+            img:"../images/burguer/doble.jpg"
         },
         {
             id: 4,
             name: "Sencillo",
             price: 6000,
-            category: "dogs"
+            category: "perros",
+            img:"../images/dogs/sencillo.webp"
         },
         {
             id: 5,
             name: "Especial",
             price: 9000,
-            category: "dogs"
+            category: "perros",
+            img:"../images/dogs/especial.jpg"
         },
         {
             id: 6,
             name: "Choriperro",
             price: 7000,
-            category: "dogs"
+            category: "perros",
+            img:"../images/dogs/choriperro.jpg"
         },
         {
             id: 7,
             name: "Hawaiana",
             price: 7000,
-            category: "colitas"
+            category: "colitas",
+            img:"../images/colita/cola.jpg"
         },
         {
             id: 8,
             name: "Cordero",
             price: 7000,
-            category: "colitas"
+            category: "colitas",
+            img:"../images/colita/cola.jpg"
         },
         {
             id: 9,
             name: "Pernil",
             price: 30000,
-            category: "colitas"
+            category: "colitas",
+            img:"../images/colita/cola.jpg"
         },
         {
             id: 10,
             name: "Sencilla",
             price: 8000,
-            category: "Salchipapa"
+            category: "salchipapas",
+            img:"../images/salchipapa/especial.jpg"
         },
         {
             id: 11,
             name: "Especial",
             price: 10000,
-            category: "Salchipapa"
+            category: "salchipapas",
+            img:"../images/salchipapa/sencilla.jpeg"
         },
         {
             id: 12,
             name: "Familiar",
             price: 23000,
-            category: "Salchipapa"
+            category: "salchipapas",
+            img:"../images/salchipapa/familiar.jpeg"
         },
         {
             id: 13,
             name: "coca-cola",
             price: 1800,
-            category: "Bebidas"
+            category: "bebidas",
+            img:"../images/bebidas/coca350.webp"
         },
         {
             id: 14,
             name: "colombiana-350",
             price: 1500,
-            category: "Bebidas"
+            category: "bebidas",
+            img:"../images/bebidas/col350.jpg"
         },
         {
             id: 15,
             name: "colombiana litro",
             price: 3000,
-            category: "Bebidas"
+            category: "bebidas",
+            img:"../images/bebidas/col1lt.webp"
         },
         {
             id: 16,
             name: "pepi litro",
             price: 3000,
-            category: "Bebidas"
+            category: "bebidas",
+            img:"../images/bebidas/pep1t.jpg"
         },
     ]
 
-    const [estado, setEstado] = useState("burguer")
-    
+    const [filtro, setFiltro] = useState("hamburguesas")
+    useEffect(()=>{
+        setFiltro(category)
+    },[category])
 
 return (
     <div className='container-comida'>
@@ -127,19 +147,22 @@ return (
                             </li>
 
                             <li>
-                                <NavLink className={({isActive}) => isActive ? 'active2' : 'desactive2'} to='salchipapas'>Salchipapa</NavLink>
+                                <NavLink className={({isActive}) => isActive ? 'active2' : 'desactive2'} to='salchipapas'>salchipapas</NavLink>
                             </li>
 
                             <li>
-                                <NavLink className={({isActive}) => isActive ? 'active2' : 'desactive2'} to='bebidas'>Bebidas</NavLink>
+                                <NavLink className={({isActive}) => isActive ? 'active2' : 'desactive2'} to='bebidas'>bebidas</NavLink>
                             </li>
                     </ul>
         </div>
 
         <div className='container-comidaa'>
                 {products.map(x=>{
-                    return <Constructor key={x.id} name={x.name} img={x.img} price={x.price} category={x.category} />
-                })}
+                    if(x.category === filtro){
+                        return <Constructor key={x.id} name={x.name} img={x.img} price={x.price} category={x.category} />
+                    }
+                    return ""
+                })} 
         </div>
 
 

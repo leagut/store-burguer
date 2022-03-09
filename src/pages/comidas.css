@@ -48,4 +48,11 @@
     border: 1px solid rgb(216, 184, 6);
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-comidaa img{
+    width: 100px;
+    border-radius: 5px;
 }

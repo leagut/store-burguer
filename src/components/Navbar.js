@@ -1,9 +1,11 @@
 import React from 'react'
 import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 import './navbar.css'
 import logo from '../images/lol.png'
 import cart from '../images/carrosk.png'
 import { Sidebar } from './Sidebar'
+import { Car } from '../pages/Car'
 
 export const Navbar = () => {
 return (
@@ -25,8 +27,12 @@ return (
         </div>
 
         <div className='right-div'>
-            <img src={cart} className='cart-div'/>
+            
+            <Link  to='carrito'> <img src={cart} className='cart-div'/>  </Link>
         </div>
+
+        
+
     </div>
 )
 }
