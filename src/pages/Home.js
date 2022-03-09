@@ -7,7 +7,6 @@ import letrero from '../images/lol3.png'
 export const Home = () => {
 return (
     <div>
-        <Navbar/>
         <div className='Bodyy'>
         <img src={letrero} className='letreto'/>
         <div className='charla'>
@@ -15,7 +14,7 @@ return (
         </div>
 
         </div>
-        <Footer/>
+        
     </div>
 )
 }
