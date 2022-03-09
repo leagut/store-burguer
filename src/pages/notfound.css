@@ -1,0 +1,12 @@
+.cryy{
+    width: 100%;
+    background-color: #f8c920;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
+}
+
+.crypic{
+    width: 40%;
+}

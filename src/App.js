@@ -3,7 +3,9 @@ import { BrowserRouter , Route , Routes } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
-import { Products } from './components/Products';
+import { Comidas } from './pages/Comidas';
+import { Notfound } from './pages/Notfound';
+
 
 function App() {
   return (
@@ -12,7 +14,11 @@ function App() {
     <Navbar/>
     <Routes>
     <Route path='/' element={<Home/>} />
-    <Route path='/' element={<Home/>} />
+    <Route path='comidas' element={<Comidas/>}>  
+     <Route path=':category' element={<Comidas/>} />
+    </Route>
+    <Route path='*' element={<Notfound/>} />
+
     </Routes>
     <Footer/>
     </BrowserRouter>

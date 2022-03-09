@@ -29,6 +29,7 @@
 .letras-div{
     display: flex;
     margin-left: 15px;
+    
 }
 
 .letras-letras{
@@ -40,4 +41,30 @@
     width: 50px;
     /* border: 1px solid green; */
     margin-bottom: 10px
+}
+
+.letras-div2{
+    display: flex;
+    text-decoration: none;
+}
+
+.letras-div2 li {
+    margin-left: 10px;
+    text-decoration: none;
+    list-style-type: none;
+    color: aliceblue;
+}
+
+.active{
+    background-color: rgb(201, 113, 12);
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    padding: 0px 2px;
+    border-radius: 5px 0px;
+    text-decoration: none;
+}
+
+.desactive{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
 }

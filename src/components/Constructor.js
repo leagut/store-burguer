@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Products = () => {
+export const Constructor = (props) => {
 return (
     <div>
-        Productos
+        
     </div>
 )
 }
