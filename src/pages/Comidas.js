@@ -1,6 +1,9 @@
 import React from 'react'
 import './comidas.css'
 import { NavLink } from "react-router-dom"
+import hs from '../images/burguer/sencilla.jpg'
+import { Constructor } from '../components/Constructor'
+import { useState } from 'react'
 
 export const Comidas = () => {
 
@@ -9,7 +12,8 @@ export const Comidas = () => {
             id: 1,
             name: "Sencilla",
             price: 8000,
-            category: "burguer"
+            category: "burguer",
+            
         },
         {
             id: 2,
@@ -103,7 +107,8 @@ export const Comidas = () => {
         },
     ]
 
-
+    const [estado, setEstado] = useState("burguer")
+    
 
 return (
     <div className='container-comida'>
@@ -131,8 +136,10 @@ return (
                     </ul>
         </div>
 
-        <div>
-            
+        <div className='container-comidaa'>
+                {products.map(x=>{
+                    return <Constructor key={x.id} name={x.name} img={x.img} price={x.price} category={x.category} />
+                })}
         </div>
 
 

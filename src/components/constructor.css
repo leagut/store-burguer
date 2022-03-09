@@ -1,0 +1,11 @@
+.bob{
+    width: 100px;
+    height: 150px;
+    background-color: rgb(233, 138, 13);
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
