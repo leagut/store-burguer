@@ -3,6 +3,12 @@ import './car.css'
 
 export const Car = () => {
 return (
-    <div className='car'>Car</div>
+    <div className='car'>
+        
+        <div className='bc-black'>
+
+        </div>
+    
+    </div>
 )
 }
