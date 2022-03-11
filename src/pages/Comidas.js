@@ -7,6 +7,9 @@ import { useState } from 'react'
 
 export const Comidas = () => {
 
+    const [comid,setComid] = useState([]);
+    console.log(comid)
+
     const {category} = useParams()
 
     const products = [
@@ -24,6 +27,7 @@ export const Comidas = () => {
             price: 12000,
             category: "hamburguesas",
             img:require("../images/burguer/especial.PNG")
+            
         },
         {
             id: 3,
@@ -126,7 +130,7 @@ export const Comidas = () => {
     ]
 
     const [filtro, setFiltro] = useState("hamburguesas")
-    useEffect(()=>{
+        useEffect(()=>{
         setFiltro(category)
     },[category])
 
@@ -159,7 +163,7 @@ return (
         <div className='container-comidaa'>
                 {products.map(x=>{
                     if(x.category === filtro){
-                        return <Constructor key={x.id} name={x.name} img={x.img} price={x.price} category={x.category} />
+                        return <Constructor callback={(product)=>{setComid([...comid,product])}} key={x.id} name={x.name} img={x.img} price={x.price} category={x.category} />
                     }
                     return ""
                 })} 
