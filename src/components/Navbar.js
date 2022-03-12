@@ -4,8 +4,6 @@ import { Link } from "react-router-dom"
 import './navbar.css'
 import logo from '../images/lol.png'
 import cart from '../images/carrosk.png'
-import { Sidebar } from './Sidebar'
-import { Car } from '../pages/Car'
 import { Context } from '../hooks/Context'
 
 export const Navbar = () => {
