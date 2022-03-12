@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from "react-router-dom"
 import { Link } from "react-router-dom"
 import './navbar.css'
@@ -6,8 +6,10 @@ import logo from '../images/lol.png'
 import cart from '../images/carrosk.png'
 import { Sidebar } from './Sidebar'
 import { Car } from '../pages/Car'
+import { Context } from '../hooks/Context'
 
 export const Navbar = () => {
+    const contexto = useContext(Context)
 return (
     <div className='techo'>
         <div className='lefth-div'>
@@ -28,7 +30,7 @@ return (
 
         <div className='right-div'>
             
-            <Link  to='carrito'> <img src={cart} className='cart-div'/>  </Link>
+            <div className='papita'> <Link  to='carrito'> <img src={cart} className='cart-div'/> <div className='counter'> {contexto.carrito.length} </div>  </Link> </div>
         </div>
 
         

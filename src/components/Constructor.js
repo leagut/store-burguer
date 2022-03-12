@@ -22,7 +22,7 @@ return (
         <h4>{props.name}</h4>
         <p>{props.price}</p>
         <div>
-        <button onClick={() => {clickNumber(props.price)}}>Add</button> 
+        <button onClick={() => {clickNumber(props)}}>Add</button> 
         </div>
     </div>
 )

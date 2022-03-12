@@ -68,3 +68,21 @@
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
+
+.counter{
+    background-color: rgb(235, 33, 19);
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+}
+
+.papita{
+    position: relative;
+    
+}

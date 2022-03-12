@@ -1,14 +1,28 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './comidas.css'
 import { NavLink , useParams } from "react-router-dom"
 import { Constructor } from '../components/Constructor'
 import { useState } from 'react'
-
+import { Context } from '../hooks/Context'
 
 export const Comidas = () => {
 
     const [comid,setComid] = useState([]);
+
+    const contexto = useContext(Context)
+    
+    contexto.setCarrito(comid);
+    console.log(contexto.carrito);
+    const cuentame = comid.length;   //cantidad de productos en el carro
+    let tarro = 0; // total del precio de la compra 
+
+    for(let x of comid) {
+    tarro  = tarro+x.price
+    }
+
+    console.log(tarro)
     console.log(comid)
+    console.log(cuentame)
 
     const {category} = useParams()
 
@@ -115,14 +129,14 @@ export const Comidas = () => {
         },
         {
             id: 15,
-            name: "colombiana litro",
+            name: "colombiana 1lt",
             price: 3000,
             category: "bebidas",
             img:require("../images/bebidas/col1lt.webp")
         },
         {
             id: 16,
-            name: "pepi litro",
+            name: "pepsi 1lt",
             price: 3000,
             category: "bebidas",
             img:require("../images/bebidas/pep1t.jpg")
@@ -163,7 +177,7 @@ return (
         <div className='container-comidaa'>
                 {products.map(x=>{
                     if(x.category === filtro){
-                        return <Constructor callback={(product)=>{setComid([...comid,product])}} key={x.id} name={x.name} img={x.img} price={x.price} category={x.category} />
+                        return <Constructor  callback={(product)=>{setComid([...comid,product])}}   key={x.id} name={x.name} img={x.img} price={x.price} category={x.category} />
                     }
                     return ""
                 })} 
