@@ -32,7 +32,7 @@ const remove = (product)=>{
 }
 
 const senMessage =()=>{
-    window.open(`https://api.whatsapp.com/send?phone=${"3186834366"}&text=${"hola quisiera pedir: "} ${productoremove} ${total}`)
+    window.open(`https://api.whatsapp.com/send?phone=${"+57 3186834366"}&text=${"hola quisiera pedir: "} ${JSON.stringify(productoremove)} con un total de  ${total}`)
 }
 return (
     <div className='car'>
