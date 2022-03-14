@@ -13,5 +13,26 @@
     width: 300px;
     height: 400px;
     background-color: black;
+    display: flex;
+    justify-content: center;
     border-radius: 10px;
+    flex-direction: column;
+}
+
+.otal{
+    width: 90%;
+    height: 80px;
+    background-color: aqua;
+    
+}
+
+.otal img {
+    width: 100px;
+    height: 100px;
+}
+
+.sumatoria{
+    width: 80%;
+    height: 50px;
+    background-color: aquamarine;
 }

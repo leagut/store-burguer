@@ -12,17 +12,17 @@ export const Comidas = () => {
     const contexto = useContext(Context)
     
     contexto.setCarrito(comid);
-    console.log(contexto.carrito);
+    
     const cuentame = comid.length;   //cantidad de productos en el carro
     let tarro = 0; // total del precio de la compra 
 
-    for(let x of comid) {
-    tarro  = tarro+x.price
-    }
-
-    console.log(tarro)
+        for(let x of comid) {
+        tarro  = tarro+x.price
+        }
+        
+/*   console.log(tarro)
     console.log(comid)
-    console.log(cuentame)
+    console.log(cuentame) */
 
     const {category} = useParams()
 
@@ -177,7 +177,7 @@ return (
         <div className='container-comidaa'>
                 {products.map(x=>{
                     if(x.category === filtro){
-                        return <Constructor  callback={(product)=>{setComid([...comid,product])}}   key={x.id} name={x.name} img={x.img} price={x.price} category={x.category} />
+                        return <Constructor isremove={false} item={x} callback={(product)=>{setComid([...comid,product])}}   key={x.id} name={x.name} img={x.img} price={x.price} category={x.category} />
                     }
                     return ""
                 })} 
